@@ -1,0 +1,17 @@
+{
+    "name": "pepo-le/aws-ses-php54-ec2",
+    "autoload": {
+        "psr-4": {
+            "SesPhp54Ec2\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "pepo-le",
+            "email": "hello@pepo-le.com"
+        }
+    ],
+    "require": {
+        "aws/aws-sdk-php": "2.8.31"
+    }
+}
