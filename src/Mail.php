@@ -98,7 +98,7 @@ class Mail
      * @param array $templateData テンプレートデフォルトデータ配列
      * @return boolean
      */
-    public function sendBulkMail($from, $reply, $templateName, $defaultTemplateData)
+    public function sendBulkMail($from, $reply, $templateName, $defaultTemplateData, $configurationsSetName = '')
     {
         if (count($this->destinations) == 0) {
             return false;
@@ -133,7 +133,8 @@ class Mail
                 ]
             ],
             'FromEmailAddress' => $from,
-            'ReplyToAddresses' => [$reply]
+            'ReplyToAddresses' => [$reply],
+            'ConfigurationsSetName' => $configurationsSetName
         ];
         $request->setBody(json_encode($requestBodyArray));
         $response = $request->send();
