@@ -69,7 +69,7 @@ class Template
 
     /**
      * AWS-SESのメールテンプレートを削除
-     * 
+     *
      * @return boolean
      */
     public function deleteTemplate()

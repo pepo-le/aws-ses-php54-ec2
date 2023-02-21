@@ -75,7 +75,7 @@ class Mail
             ],
             'ReplacementEmailContent' => [
                 'ReplacementTemplate' => [
-                    'ReplacementTemplateData' => json_encode($templateData)
+                    'ReplacementTemplateData' => $templateData ? json_encode($templateData) : '{}'
                 ]
             ]
         ];
@@ -95,7 +95,7 @@ class Mail
      * @param string $from 送信元
      * @param string $reply 返信先メールアドレス
      * @param string $templateName メールテンプレート名
-     * @param array $templateData パーソナライズ用データ配列
+     * @param array $templateData テンプレートデフォルトデータ配列
      * @return boolean
      */
     public function sendBulkMail($from, $reply, $templateName, $defaultTemplateData)
@@ -128,7 +128,7 @@ class Mail
             'DefaultContent' => [
                 'Template' => [
                     'TemplateArn' => 'arn:aws:ses:' . $this->region . ':' . $this->accountId . ':template/' . $templateName,
-                    'TemplateData' => json_encode($defaultTemplateData),
+                    'TemplateData' => $defaultTemplateData ? json_encode($defaultTemplateData) : '{}',
                     'TemplateName' => $templateName
                 ]
             ],
