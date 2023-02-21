@@ -12,6 +12,10 @@
         }
     ],
     "require": {
-        "aws/aws-sdk-php": "2.8.31"
+        "aws/aws-sdk-php": "2.8.31",
+        "phpunit/phpunit": "4.8.36"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.11"
     }
 }
